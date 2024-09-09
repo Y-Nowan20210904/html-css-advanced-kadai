@@ -23,13 +23,24 @@ PC用のスタイル
     margin: 0 auto 0 auto;
   }
 
-  #menu-sp{
-    display: none;
+  #menu-sp {
+   display: none;
   }
-
+ 
   #nav-sp{
     display: none;
   }
+
+/* スマホ用ナビを非表示 */
+   #nav-sp{
+    display: none;
+   }
+   #menu-sp {
+     display: none;
+   }
+
+
+ 
 
   /* ヘッダー */
   header {
@@ -66,13 +77,18 @@ PC用のスタイル
   #nav-pc>a:active {
     color: #0d0d0d;
   }
+}
 /*====================
 スマートフォン用のスタイル
 =====================*/
-  body {
-    min-width: 375px;
-    margin: 0;
-  }
+
+/* 横幅設定 */
+
+@media screen and (max-width: 767px) {
+   body {
+     min-width: 375px;
+     margin: 0;
+   }
 
   /* PC用ナビゲーション非表示 */
   #nav-pc {
@@ -85,18 +101,26 @@ PC用のスタイル
     padding: 0;
   }
   
-   /* スマホ用ナビゲーションの表示切替 */
-  /* 初期状態、レイアウトと非表示設定 */
-  #nav-sp {
-    background-color: #ce933e;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    display: none;
-    z-index: 100;
-  }
+   /* スマホ用ナビゲーション*/
+    #nav-sp {
+     background-color: #ce933e;
+     position: absolute;
+     left: 0;
+     top: 0;
+     height: 100%;
+     width: 100%;
+     display: none;
+     z-index: 100;
+   }
+
+   #nav-sp ul{
+    padding-left: 0;
+   }
+  
+   #nav-sp li{
+    list-style: none;
+   }
+
 
     /* ×ボタン */
     #close {
@@ -110,32 +134,30 @@ PC用のスタイル
       margin: 80px 0 30px 20px;
     }
 
-      /* ナビゲーションのリンクの装飾設定 */
-   #nav-sp > a {
-    display: block;
+      #nav-sp > a {
+      display: block;
+     }
+      #nav-sp > a:link {
+       color: #ffffff;
+      }
+     #nav-sp > a:visited {
+      color: #ffffff;
+     }
+     #nav-sp > a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    #nav-sp > a:active {
+      color: #ffffff;
+    }
+    #nav-sp > .menu {
+      text-decoration: none;
+      display: block;
+      margin: 0 20px 0 20px;
+      height: 44px;
+      font-size: 16px;
+      background-image: url("images/arrow.png");
+      background-repeat: no-repeat;
+      background-position: right top;
+   }  
   }
-  #nav-sp > a:link {
-    color: #ffffff;
-  }
-  #nav-sp > a:visited {
-    color: #ffffff;
-  }
-  #nav-sp > a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-  #nav-sp > a:active {
-    color: #ffffff;
-  }
-  #nav-sp > .menu {
-    text-decoration: none;
-    display: block;
-    margin: 0 20px 0 20px;
-    height: 44px;
-    font-size: 16px;
-    background-image: url("images/arrow.png");
-    background-repeat: no-repeat;
-    background-position: right top;
-  }
-}
-
